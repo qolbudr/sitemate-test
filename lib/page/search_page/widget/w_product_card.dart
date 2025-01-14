@@ -29,7 +29,7 @@ class WProductCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(e.title ?? ''),
+                Text(e.title ?? '', style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                 Text(e.price?.toString() ?? ''),
               ],
             ),

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dio/dio.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -75,9 +76,23 @@ class _SearchPageState extends State<SearchPage> {
                   padding: EdgeInsets.zero,
                   children: [
                     if (product.isEmpty) ...[
-                      const SizedBox(height: 20),
-                      const Center(
-                        child: Text("No data found"),
+                      const SizedBox(height: 100),
+                      Center(
+                        child: Column(
+                          children: [
+                            CachedNetworkImage(
+                              imageUrl:
+                                  'https://cdni.iconscout.com/illustration/premium/thumb/not-found-illustration-download-in-svg-png-gif-file-formats--error-search-result-state-page-empty-states-pack-design-development-illustrations-3363936.png',
+                              width: 200,
+                              height: 200,
+                              fit: BoxFit.cover,
+                            ),
+                            const Text(
+                              "No data found",
+                              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
                       ),
                     ] else ...[
                       ...product.map(

@@ -1,0 +1,15 @@
+targets:
+  $default:
+    builders:
+      freezed:
+        options:
+          explicit_to_json: true
+      #      copy_with_extension_gen:
+      #        enabled: true
+      #        options:
+      #          copy_with_null: false # default is false
+      #          skip_fields: true    # default is false
+      json_serializable:
+        options:
+          #          field_rename: snake
+          explicit_to_json: true

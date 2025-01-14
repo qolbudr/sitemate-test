@@ -39,6 +39,8 @@ class _SearchPageState extends State<SearchPage> {
         content: Text(e.toString()),
       );
       if (mounted) ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      if (refreshController.isRefresh) refreshController.refreshFailed();
+      if (refreshController.isLoading) refreshController.loadFailed();
     }
   }
 

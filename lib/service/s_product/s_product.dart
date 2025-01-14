@@ -16,7 +16,7 @@ class SProduct {
         url = 'https://dummyjson.com/products?limit=$limit&skip=$skip';
       }
 
-      final response = await dio.get(url);
+      final response = await dio.post(url);
       if (response.statusCode == 200) return ProductResponse.fromJson(response.data);
 
       throw ServerException(code: response.statusCode, message: response.data['message']);
